@@ -7,4 +7,6 @@ salary: {type: Number, required: true},
 language: {type: String, required: true},
 country: {type: String, required: true},
 isManager: {type: Boolean, default: false}
-})
+});
+
+module.exports = mongoose.model('Employee', EmployeeSchema);
