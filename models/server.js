@@ -16,5 +16,17 @@ const firstNames = [
     'Shivam','Aarav','Isha',"priya",'Rahul','Sneha', "Vikram",'Kiran','Dev', "Neha" ];
 
     function buildDummyEmployee(i) {
-        
+
+   return {
+
+    name: firstNames[i % firstNames.length],
+    salary: 200000000 + i*250000, //vary salary a bit
+    language: 'English',
+    country: 'India',
+    isManager: i%3 === 0    //every 3rd person is manager
+   };
+
     } 
+
+ // ---------- API route --------
+    
