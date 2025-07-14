@@ -28,5 +28,17 @@ const firstNames = [
 
     } 
 
- // ---------- API route --------
-    
+//  // ---------- API route --------
+
+ app.get('/generate', async (_req, res)=>{
+    try{
+    // wipe old data
+    await Employee.deleteMany({});
+    // create 10 new docs
+    const docs = await Employee.insertMany(
+        Array.from({length: 10}, (_i) => buildDummyEmployee(i))
+        res.json({ok: true, count:docs.length});
+    )
+
+    }
+ })
