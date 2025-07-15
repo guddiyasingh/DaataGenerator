@@ -37,8 +37,11 @@ const firstNames = [
     // create 10 new docs
     const docs = await Employee.insertMany(
         Array.from({length: 10}, (_i) => buildDummyEmployee(i))
-        res.json({ok: true, count:docs.length});
+       
     )
-
+     res.json({ok: true, count:docs.length});
+    }catch (err) {
+        console.error(err);
+        res
     }
  })
