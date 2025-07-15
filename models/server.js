@@ -42,6 +42,12 @@ const firstNames = [
      res.json({ok: true, count:docs.length});
     }catch (err) {
         console.error(err);
-        res
+        res.status(500).json({ok: false, message: 'Server error'});
     }
- })
+ });
+
+ //------- Serve the tiny frontend --------
+
+ app.use(express.static(path.json(__dirname, 'public')));
+
+ app.listen()
